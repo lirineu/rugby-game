@@ -19,13 +19,13 @@ direction_t execute_defender_strategy(position_t defender_position,
                                       Spy attacker_spy){
   static int Rodada = 0;
   static position_t Spy;
-  position_t Dir;
+  direction_t Dir;
   static int Random;
   
   if(Rodada == 0){
       Random = random();
   }
-  
+
   Rodada++;
 
   if(Rodada < Random){
