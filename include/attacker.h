@@ -5,7 +5,6 @@
 #include <stdlib.h>
 
 // Internal headers
-#include "field.h"
 #include "position.h"
 #include "spy.h"
 
