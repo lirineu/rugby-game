@@ -15,8 +15,7 @@
  * Given the player position, it should decide the next direction
  * they will take in the field.
  */
-direction_t execute_defender_strategy(position_t defender_position,
-                                      Spy attacker_spy){
+direction_t execute_defender_strategy(position_t defender_position, Spy attacker_spy){
   static int Rodada = 0;
   static position_t Spy;
   direction_t Dir;
