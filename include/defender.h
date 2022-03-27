@@ -26,36 +26,36 @@ direction_t execute_defender_strategy(position_t defender_position,
   
 
   if(Rodada < Random){
-    Dir = {0, -1};
+    Dir = DIR_RIGHT;
   }
   else if(Rodada == Random){
     Spy = get_spy_position(attacker_spy);
     if(Spy.j > defender_position.j){
-        Dir = {0, 0};
+        Dir = DIR_STAY;
     }
     else if(Spy.i > defender_position.i){
-        Dir = {1, -1};
+        Dir = DIR_DOWN_LEFT;
     }
     else if(Spy.i < defender_position.i){
-        Dir = {-1, -1};
+        Dir = DIR_DOWN_RIGHT;
     }
     else{
-        Dir = {0, -1}
+        Dir = DIR_RIGHT;
     }
 
   }
   else{
     if(Spy.j > defender_position.j){
-        Dir = {0, 0};
+        Dir = DIR_STAY;
     }
     else if(Spy.i > defender_position.i){
-        Dir = {1, -1};
+        Dir = DIR_DOWN_LEFT;
     }
     else if(Spy.i < defender_position.i){
-        Dir = {-1, -1};
+        Dir = DIR_DOWN_RIGHT;
     }
     else{
-        Dir = {0, -1}
+        Dir = DIR_RIGHT;
     }
   }
   
