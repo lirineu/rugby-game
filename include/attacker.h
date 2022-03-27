@@ -19,7 +19,7 @@ direction_t execute_attacker_strategy(position_t attacker_position,
                                       Spy defender_spy){
     static int Rodada = 0;
     int Max, Rand, DirVer, DirHor;
-    position_t Dir;
+    direction_t Dir;
 
     Rodada++;
 
