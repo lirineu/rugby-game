@@ -2,7 +2,7 @@
 #define DEFENDER_H
 
 //Standard headers
-//#include <stdlib.h>
+#include <stdlib.h>
 
 // Internal headers
 #include "position.h"
