@@ -18,12 +18,59 @@
 
 direction_t execute_defender_strategy(
     position_t defender_position, Spy attacker_spy) {
-  // TODO: unused parameters, remove these lines later
-  UNUSED(defender_position);
-  UNUSED(attacker_spy);
+  {
+  static int Rodada = 0;
+  static position_t Spy;
+  direction_t Dir;
+  static int Random;
+  
+  if(Rodada == 0){
+      Random = random()%10;
+  }
 
-  // TODO: Implement Defender logic here
-  return (direction_t) DIR_LEFT;
+  Rodada++;
+
+  if(Rodada < Random){
+    Dir.i = 0;
+    Dir.j = -1;
+  }
+  else if(Rodada == Random){
+    Spy = get_spy_position(attacker_spy);
+    if(Spy.j > defender_position.j){
+        Dir.i = Dir.j = 0;
+    }
+    else if(Spy.i > defender_position.i){
+        Dir.i = 1;
+        Dir.j = -1;
+    }
+    else if(Spy.i < defender_position.i){
+        Dir.i = Dir.j = -1;
+    }
+    else{
+        Dir.i = 0;
+        Dir.j = -1;
+    }
+
+  }
+  else{
+    if(Spy.j > defender_position.j){
+        Dir.i = Dir.j = 0;
+    }
+    else if(Spy.i > defender_position.i){
+        Dir.i = 1;
+        Dir.j = -1;
+    }
+    else if(Spy.i < defender_position.i){
+        Dir.i = Dir.j = -1;
+    }
+    else{
+        Dir.i = 0;
+        Dir.j = -1;
+    }
+  }
+  
+  return Dir;
+}
 }
 
 /*----------------------------------------------------------------------------*/
