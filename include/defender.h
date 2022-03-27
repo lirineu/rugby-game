@@ -23,42 +23,47 @@ direction_t execute_defender_strategy(position_t defender_position,
   static int Random;
   
   if(Rodada == 0){
-      Random = random();
+      Random = random()%10;
   }
 
   Rodada++;
 
   if(Rodada < Random){
-    Dir = DIR_RIGHT;
+    Dir.i = 0;
+    Dir.j = -1;
   }
   else if(Rodada == Random){
     Spy = get_spy_position(attacker_spy);
     if(Spy.j > defender_position.j){
-        Dir = DIR_STAY;
+        Dir.i = Dir.j = 0;
     }
     else if(Spy.i > defender_position.i){
-        Dir = DIR_DOWN_LEFT;
+        Dir.i = 1;
+        Dir.j = -1;
     }
     else if(Spy.i < defender_position.i){
-        Dir = DIR_DOWN_RIGHT;
+        Dir.i = Dir.j = -1;
     }
     else{
-        Dir = DIR_RIGHT;
+        Dir.i = 0;
+        Dir.j = -1;
     }
 
   }
   else{
     if(Spy.j > defender_position.j){
-        Dir = DIR_STAY;
+        Dir.i = Dir.j = 0;
     }
     else if(Spy.i > defender_position.i){
-        Dir = DIR_DOWN_LEFT;
+        Dir.i = 1;
+        Dir.j = -1;
     }
     else if(Spy.i < defender_position.i){
-        Dir = DIR_DOWN_RIGHT;
+        Dir.i = Dir.j = -1;
     }
     else{
-        Dir = DIR_RIGHT;
+        Dir.i = 0;
+        Dir.j = -1;
     }
   }
   
