@@ -67,9 +67,7 @@ direction_t execute_defender_strategy(position_t defender_position,
     }
   }
   
-  move_position(defender_position, Dir);
-
-  return;
+  return Dir;
 }
 
 #endif // DEFENDER_H
