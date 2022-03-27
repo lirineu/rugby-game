@@ -2,7 +2,7 @@
 #define DEFENDER_H
 
 //Standard headers
-#include <stdlib.h>
+//#include <stdlib.h>
 
 // Internal headers
 #include "position.h"
@@ -16,7 +16,7 @@
  * they will take in the field.
  */
 direction_t execute_defender_strategy(position_t defender_position, Spy attacker_spy){
-    
+
   static int Rodada = 0;
   static position_t Spy;
   direction_t Dir;
